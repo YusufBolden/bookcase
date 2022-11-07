@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>TOP Library</title>
+</head>
+
+<body class="grid">
+    <aside class="grid">
+        <img src="resources/icons/logo.svg" alt="" class="logo">
+        <div class="library-data flex">
+            <h2>Library Statistics</h2>
+            <ul class="stats flex">
+                <li class="stat">
+                    <p class="stat-label flex">Total Books <span id="total-books" class="stat-value">0</span></p>
+                </li>
+                <li class="stat">
+                    <p class="stat-label flex">Read Books <span id="read-books" class="stat-value">0</span></p>
+                </li>
+                <li class="stat">
+                    <p class="stat-label flex">Unread Books <span id="unread-books" class="stat-value">0</span></p>
+                </li>
+                <li class="stat">
+                    <p class="stat-label flex">Total Pages <span id="total-pages" class="stat-value">0</span></p>
+                </li>
+                <li class="stat">
+                    <p class="stat-label flex">Read Pages <span id="read-pages" class="stat-value">0</span></p>
+                </li>
+                <li class="stat">
+                    <p class="stat-label flex">Unread Pages <span id="unread-pages" class="stat-value">0</span></p>
+                </li>
+            </ul>
+        </div>
+        <button id="show-modal" class="show-modal-btn flex"><img src="resources/icons/plus.svg" alt="" class="icon">New
+            Book</button>
+    </aside>
+    <main class="grid">
+        <header class="grid">
+            <div class="search flex">
+                <img src="resources/icons/search.svg" alt="" class="icon">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <ul class="data-headers grid">
+                <li class="data-header">Title</li>
+                <li class="data-header">Author</li>
+                <li class="data-header">Page Count</li>
+                <li class="data-header">Read Status</li>
+                <li class="data-header">Publishing Date</li>
+            </ul>
+        </header>
+        <div class="content grid" id="book-list">
+            <div class="book grid" id="clone-book" hidden>
+                <ul class="data-list grid">
+                    <li class="book-data book-title flex"></li>
+                    <li class="book-data book-author flex"></li>
+                    <li class="book-data book-pagecount flex"></li>
+                    <li class="book-data book-readstatus grid">
+                        <p class="status-text"></p>
+                        <input type="checkbox" class="checkbox-hidden" autocomplete="off"><label
+                            class="slider-background">Toggle Book Read Status</label>
+                    </li>
+                    <li class="book-data book-publishing flex"></li>
+                </ul>
+                <div class="book-admin flex">
+                    <button class="book-delete flex"><img src="resources/icons/delete.svg" alt=""
+                            class="delete-icon icon"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="modal flex" id="modal" hidden>
+        <form action="#" method="post" class="grid" id="new-book-form">
+            <div class="modal-accent"><img src="resources/accentimg.jpg" alt="" class="accent-img"></div>
+            <div class="modal-header flex">
+                <h2 class="modal-title">Save A New Book</h2>
+                <button class="modal-close flex" id="close-modal" type="button"><img src="resources/icons/close.svg"
+                        alt="" class="icon"></button>
+            </div>
+            <div class="modal-body flex">
+                <div class="modal-inputs grid">
+                    <div class="modal-input flex">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" placeholder="Ex: Alice In Wonderland..." required>
+                    </div>
+                    <div class="modal-input flex">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author" placeholder="Ex: Lewis Carroll..." required>
+                    </div>
+                    <div class="modal-input flex">
+                        <label for="pagecount">Page Count</label>
+                        <input type="number" name="pagecount" id="pagecount" placeholder="Ex: 52..." required min="1"
+                            max="50000">
+                    </div>
+                    <div class="modal-input flex">
+                        <label for="publishdate">Publishing Date</label>
+                        <input type="date" name="publishdate" id="publishdate" required>
+                    </div>
+                    <div class="modal-input readinput flex">
+                        <p>Finished Reading</p>
+                        <input type="checkbox" id="readinput" class="checkbox-hidden" autocomplete="off"
+                            name="readstatus"><label for="readinput" class="slider-background">Toggle Book Read
+                            Status</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex">
+                <button class="modal-submit flex" type="submit" id="submit-book"><img src="resources/icons/plus.svg"
+                        alt="" class="icon">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

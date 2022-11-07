@@ -1,0 +1,600 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+[hidden] {
+  display: none !important; /* This is to force the hiding of the modal to upmost importance. */
+}
+/* #################### */
+/* ### End of reset ### */
+/* #################### */
+
+/* ############################### */
+/* ### Global / Default Styles ### */
+/* ############################### */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+}
+
+.container {
+  padding: 10px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  grid-template-columns: min-content 1fr;
+  background-color: var(--secondary-color);
+  height: 100vh;
+}
+
+:root {
+  --primary-color: #2c3639;
+  --secondary-color: #eeeeee;
+  --primary-accent-color: #a27b5c;
+  --secondary-accent-color: #3f4e4f;
+  --slider-color-checked: #228b22;
+  --slider-color-unchecked: #808080;
+  --icon-color-light: brightness(0) saturate(100%) invert(100%) sepia(3%)
+    saturate(750%) hue-rotate(200deg) brightness(116%) contrast(87%);
+  --icon-color-dark: brightness(0) saturate(100%) invert(19%) sepia(6%)
+    saturate(1245%) hue-rotate(147deg) brightness(95%) contrast(93%);
+  --icon-color-delete: brightness(0) saturate(100%) invert(11%) sepia(89%)
+    saturate(5169%) hue-rotate(357deg) brightness(89%) contrast(115%);
+  --icon-color-logo: brightness(0) saturate(100%) invert(55%) sepia(7%)
+    saturate(2218%) hue-rotate(344deg) brightness(91%) contrast(80%);
+  --static-image: url(data:image/png;base64,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);
+}
+/* ###################################### */
+/* ### End of Global / Default Styles ### */
+/* ###################################### */
+
+/* ############################## */
+/* ### Custom Checkbox Slider ### */
+/* ############################## */
+.checkbox-hidden {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  grid-area: toggle;
+}
+
+.slider-background {
+  display: block;
+  position: relative;
+  grid-area: toggle;
+  height: 1em;
+  width: 2.5em;
+  cursor: pointer;
+  text-indent: -9999px;
+  background: var(--slider-color-unchecked);
+  border-radius: 1em;
+}
+
+.slider-background:after {
+  content: "";
+  position: absolute;
+  top: 0.15em;
+  left: 0.15em;
+  width: 1em;
+  height: 0.7em;
+  background: var(--primary-color);
+  border-radius: 1em;
+  transition: 0.3s;
+}
+
+.checkbox-hidden:checked + .slider-background {
+  background: var(--slider-color-checked);
+}
+
+.checkbox-hidden:checked + .slider-background:after {
+  left: calc(100% - 0.15em);
+  transform: translateX(-100%);
+}
+
+.slider-background:active:after {
+  width: 1.3em;
+}
+/* ##################################### */
+/* ### End of Custom Checkbox Slider ### */
+/* ##################################### */
+
+/* ############################# */
+/* ### Fixed Sidebar Element ### */
+/* ############################# */
+aside {
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  min-height: 550px;
+  gap: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  box-shadow: -2px 0px 10px 0px #000000;
+  -webkit-box-shadow: -2px 0px 10px 0px #000000;
+}
+
+.logo {
+  height: 3.5rem;
+  margin: 10px 10px 0;
+  filter: var(--icon-color-logo);
+}
+
+.library-data {
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  overflow: auto;
+  font-weight: 500;
+  border-top: 2px solid var(--secondary-accent-color);
+  border-bottom: 2px solid var(--secondary-accent-color);
+}
+
+.library-data h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.stats {
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat {
+  border-bottom: 2px solid var(--secondary-accent-color);
+  padding-bottom: 2rem;
+}
+
+.stat:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stat-label {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  background-color: var(--secondary-accent-color);
+}
+
+.show-modal-btn {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-accent-color);
+  color: inherit;
+}
+
+.show-modal-btn .icon {
+  filter: var(--icon-color-light);
+}
+/* #################################### */
+/* ### End of Fixed Sidebar Element ### */
+/* #################################### */
+
+/* ###################################### */
+/* ### Modal for Adding New Book Form ### */
+/* ###################################### */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal form {
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas:
+    "accent form"
+    "accent form"
+    "accent form";
+  min-width: 50%;
+  /* Weird border radius because of rendering bug w/ form header border-radius and overflow hidden */
+  border-radius: 0.4rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  background-image: var(--static-image);
+}
+
+.modal form > *:not(.modal-accent) {
+  padding: 20px;
+}
+
+.modal-accent {
+  grid-area: accent;
+  height: 100%;
+}
+
+.modal .accent-img {
+  width: 20vw;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.2rem solid var(--primary-accent-color);
+  border-right: none;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.modal-header {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-left: 0.2rem solid var(--primary-accent-color);
+  border-bottom: 0.2rem solid var(--primary-accent-color);
+  border-radius: 0 0.3rem 0 25%;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-close .icon {
+  filter: var(--icon-color-light);
+}
+
+.modal-body {
+  flex-direction: column;
+  border-right: 0.2rem solid var(--primary-accent-color);
+  background-color: var(--secondary-color);
+  background-image: var(--static-image);
+}
+
+.modal-inputs {
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.modal-input {
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.modal-input label {
+  font-weight: 500;
+}
+
+.modal-input input {
+  padding: 0.5rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.3rem;
+  outline: none;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  background-image: var(--static-image);
+}
+
+.modal-input input::placeholder {
+  opacity: 0.8;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+.modal-input.readinput {
+  flex-direction: row;
+  grid-column: 2 / 3;
+  align-items: center;
+  font-weight: 500;
+}
+
+.modal-footer {
+  justify-content: flex-end;
+  border-top: 0.2rem solid var(--primary-accent-color);
+  border-left: 0.2rem solid var(--primary-accent-color);
+  border-radius: 25% 0 0.3rem 0;
+  background-color: var(--primary-color);
+}
+
+.modal-submit {
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0.2rem solid var(--primary-accent-color);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  background-color: var(--primary-accent-color);
+}
+
+.modal-submit .icon {
+  filter: var(--icon-color-light);
+}
+/* ############################################# */
+/* ### End of Modal for Adding New Book Form ### */
+/* ############################################# */
+
+/* #################### */
+/* ### Main Content ### */
+/* #################### */
+main {
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  gap: 10px;
+  background-color: var(--secondary-color);
+}
+
+main header {
+  margin: 50px 50px 0;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 0.3rem 0.3rem 0 0;
+  border-bottom: 2px solid var(--primary-accent-color);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.search {
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.search .icon {
+  filter: var(--icon-color-light);
+}
+
+.search input {
+  width: 30%;
+  padding: 0.1em 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--secondary-color);
+  background-color: var(--secondary-accent-color);
+  -webkit-box-shadow: inset 0px 0px 3px -1px #000000;
+  box-shadow: inset 0px 0px 3px -1px #000000;
+}
+
+.search input::placeholder {
+  font-size: 0.8rem;
+}
+
+.data-headers {
+  grid-template-columns: repeat(5, minmax(50px, 2fr));
+  padding: 0.5em;
+  gap: 25px;
+  font-weight: 500;
+}
+
+.content {
+  grid-auto-rows: minmax(min-content, 150px);
+  min-height: 350px;
+  margin: 0 50px 50px;
+  padding: 0 10px;
+  gap: 10px;
+  overflow: auto;
+  border: 1px solid var(--primary-color);
+  border-top: none;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.book {
+  grid-template-rows: auto min-content;
+  padding: 0.5em;
+  gap: 5px;
+  border-bottom: 1px dotted var(--primary-color);
+}
+
+.data-list {
+  grid-template-columns: repeat(5, minmax(50px, 2fr));
+  gap: 25px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.book-data {
+  align-items: center;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.book-readstatus {
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "status toggle";
+  gap: 0.5em;
+  color: var(--slider-color-unchecked);
+}
+
+.status-text {
+  transition: all 0.4s ease;
+}
+
+.book-read {
+  color: var(--slider-color-checked);
+}
+
+.book-publishing {
+  font-style: italic;
+}
+
+.book-admin {
+  justify-content: end;
+}
+
+.book-delete {
+  align-items: center;
+  padding: 0.3em;
+  gap: 0.3em;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: none;
+  background: none;
+}
+
+.book-delete .icon {
+  filter: var(--icon-color-delete);
+}
+/* ########################### */
+/* ### End of Main Content ### */
+/* ########################### */
