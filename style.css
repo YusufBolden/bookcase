@@ -139,6 +139,7 @@ table {
 /* ############################### */
 .grid {
   display: grid;
+  padding-left: 100;
 }
 
 .flex {
@@ -240,6 +241,7 @@ aside {
   height: 100vh;
   min-height: 550px;
   gap: 1rem;
+  width: 10em;
   color: var(--secondary-color);
   background-color: var(--primary-color);
   box-shadow: -2px 0px 10px 0px #000000;
@@ -553,7 +555,7 @@ main header {
 }
 
 .book-title {
-  font-size: 1.2rem;
+  font-size: auto;
   cursor: pointer;
 }
 
